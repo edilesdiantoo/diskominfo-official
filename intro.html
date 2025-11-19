@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opening Diskominfo Provinsi Jambi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* === THEME CLASS (gantikan :root) === */
+    .intro-theme {
+      --intro-bg-start: #0b1f3b;
+      --intro-bg-end: #071423;
+      --intro-font: 'Poppins', sans-serif;
+    }
+
+    /* === WRAPPER UTAMA === */
+    .intro-wrapper {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 9999;
+      background: radial-gradient(circle at center, var(--intro-bg-start) 0%, var(--intro-bg-end) 100%);
+      color: #fff;
+      font-family: var(--intro-font);
+      transition: opacity 1.8s ease-in-out, visibility 1.8s ease-in-out;
+    }
+
+    .intro-wrapper.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* === SCENE === */
+    .intro-scene {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    /* === LOGO === */
+    .intro-logo {
+      position: absolute;
+      width: 100px;
+      top: 50%;
+      left: 7.5%;
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0;
+      filter: blur(25px);
+      animation:
+        intro-logo-reveal 3s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+        intro-logo-move 3s cubic-bezier(0.42, 0, 0.2, 1) 3s forwards;
+      z-index: 3;
+    }
+
+    @keyframes intro-logo-reveal {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.3);
+        filter: blur(25px);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes intro-logo-move {
+      0% { left: 7.5%; }
+      100% { left: 82.5%; }
+    }
+
+    /* === TEKS UTAMA === */
+    .intro-text {
+      position: absolute;
+      top: 50%;
+      left: 7.5%;
+      transform: translateY(-50%);
+      display: flex;
+      font-size: 5.5rem;
+      font-weight: 800;
+      letter-spacing: 4px;
+      z-index: 1;
+    }
+
+    .intro-text span {
+      opacity: 0;
+      transform: translateX(-15px) scale(0.95);
+      filter: blur(6px);
+      animation: intro-fade-right 0.5s forwards cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .intro-text span:nth-child(1) { animation-delay: 3.5s; }
+    .intro-text span:nth-child(2) { animation-delay: 3.7s; }
+    .intro-text span:nth-child(3) { animation-delay: 3.9s; }
+    .intro-text span:nth-child(4) { animation-delay: 4.0s; }
+    .intro-text span:nth-child(5) { animation-delay: 4.15s; }
+    .intro-text span:nth-child(6) { animation-delay: 4.25s; }
+    .intro-text span:nth-child(7) { animation-delay: 4.3s; }
+    .intro-text span:nth-child(8) { animation-delay: 4.7s; }
+    .intro-text span:nth-child(9) { animation-delay: 4.9s; }
+
+    @keyframes intro-fade-right {
+      0% {
+        opacity: 0;
+        transform: translateX(-15px) scale(0.95);
+        filter: blur(6px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    /* === SUBTITLE === */
+    .intro-subtitle {
+      position: absolute;
+      top: calc(50% + 45px);
+      left: 8%;
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 24px;
+      opacity: 0;
+      filter: blur(5px);
+      animation: intro-subtitle-in 1.6s ease-out 5.6s forwards;
+    }
+
+    @keyframes intro-subtitle-in {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+        filter: blur(5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 600px) {
+      .intro-logo {
+        width: 45px;
+        left: 1.5%;
+      }
+      @keyframes intro-logo-move {
+        0% { left: 1.5%; }
+        100% { left: 95.5%; }
+      }
+      .intro-text {
+        font-size: 2.4rem;
+        left: 1.5%;
+      }
+      .intro-subtitle {
+        font-size: 1rem;
+        letter-spacing: 10px;
+        top: calc(50% + 20px);
+        left: 1.65%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cukup tambahkan class intro-theme -->
+  <div class="intro-wrapper intro-theme">
+    <div class="intro-scene">
+      <img src="https://diskominfo.penajamkab.go.id/wp-content/uploads/2020/02/logo-kominfo.png"
+           alt="Logo Diskominfo" class="intro-logo" />
+      <div class="intro-text">
+        <span>D</span><span>I</span><span>S</span><span>K</span>
+        <span>O</span><span>M</span><span>I</span><span>N</span><span>F</span>
+      </div>
+      <div class="intro-subtitle">PROVINSI JAMBI</div>
+    </div>
+  </div>
+
+  <script>
+    const totalAnimationDuration = 7500;
+    const wrapper = document.querySelector('.intro-wrapper');
+
+    setTimeout(() => {
+      wrapper.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "beranda.html";
+      }, 1800);
+    }, totalAnimationDuration);
+  </script>
+</body>
+</html>

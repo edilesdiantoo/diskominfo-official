@@ -1,0 +1,219 @@
+/* Root */
+html {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px !important;
+}
+
+
+
+
+/* Lainnya */
+/* Navbar scroll effect */
+.navbar {
+  transition: all 0.3s ease;
+  background-color: transparent !important;
+}
+.navbar.scrolled {
+  background-color: white !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar hover effect  */
+.navbar-nav .nav-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffc107; /* warna garis (ubah sesuai tema) */
+  transition: width 0.4s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Efek keluar halus (biar garis mundur saat mouse out) */
+.navbar-nav .nav-link:not(:hover)::after {
+  transition: width 0.4s ease-in-out;
+}
+
+/* Background blur caption berita  */
+.captionx-berita {
+  backdrop-filter: blur(15px); 
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* Konten berita */
+.cardberita:hover {
+  background-color: #0061f2;
+  border-radius: .75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.cardberita:hover .cardjudul{
+  transition: all 0.2s ease-in-out;
+}
+
+.cardberita .iconurl {
+  color: transparent;
+}
+
+.cardberita:hover .iconurl {
+  transition: all 0.2s ease-in-out;
+  color: #fff;
+}
+
+/* Pemotong teks 2 baris */
+.text-truncate-two {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: calc(1.4em * 2);
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Pemotong teks 2 baris */
+.text-truncate-three {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: calc(1.4em * 3);
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Konten layanan */
+/* Paksa background card active jadi biru */
+.layanancard.layananactive {
+  background-color: #0d6efd !important;
+  color: #ffffff !important;
+}
+
+/* Icon dalam card active */
+.layanancard.layananactive .layananicon {
+  opacity: .75 !important;
+  color: #ffffff !important;
+}
+
+/* Judul dalam card active */
+.layanancard.layananactive .layananjudul {
+  color: #ffffff !important;
+}
+
+/* Teks dalam card active */
+.layanancard.layananactive .layanantext {
+  color: #ffffff !important;
+  opacity: .75 !important;
+}
+
+/* Konten layanan */
+.layanancard {
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/* Hover card biasa (bukan active) */
+.layanancard:hover {
+  transform: translateY(-4px);
+  background-color: #0d6efd !important;
+}
+
+/* Icon */
+.layananicon {
+  opacity: .25;
+}
+
+/* Judul */
+.layananjudul {
+  transition: color 0.3s ease;
+}
+
+/* Teks */
+.layanantext {
+  opacity: .75;
+}
+
+/* Vertical galeri */
+.scroll-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+/* Untuk perangkat besar (Laptop/PC) */
+@media (min-width: 992px) {
+  .index-img-1 {
+    object-fit: fill;
+  }
+
+  /* AREA SCROLL */
+  .scroll-box {
+    max-height: 700px;
+    overflow-y: hidden;
+    position: relative;
+  }
+}
+
+/* Phone Portrait */
+@media (max-width: 767px) and (orientation: portrait) {
+  .index-img-1 {
+    object-fit: cover;
+  }
+}
+
+/* Tablet Portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .index-img-1 {
+    object-fit: cover;
+  }
+}
+
+/* Tablet Landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .index-img-1 {
+    object-fit: fill;
+  }
+
+  /* AREA SCROLL */
+  .scroll-box {
+    max-height: 700px;
+    overflow-y: hidden;
+    position: relative;
+  }
+}
+
+/* Phone Portrait */
+@media (max-width: 767px) and (orientation: portrait) {
+  .index-img-1 {
+    object-fit: cover;
+  }
+}
+
+/* Phone Landscape */
+@media (max-width: 767px) and (orientation: landscape) {
+  .index-img-1 {
+    object-fit: fill;
+  }
+}
